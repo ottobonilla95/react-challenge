@@ -92,12 +92,11 @@ const CarList: FunctionComponent<Props> = (props) => {
     []
   );
 
-  // console.log("rerendeering..");
-
   useEffect(() => {
     props.getInfo();
   }, []);
 
+  // sort all data  (vehicles, vendors, etc)
   useEffect(() => {
     const sortedVehiclesList: IVehicle[] = [];
     const vendors: IVendor[] = [];
@@ -131,6 +130,7 @@ const CarList: FunctionComponent<Props> = (props) => {
     setTransmissionTypeList(transmissionTypes);
   }, [props.car.CarInfo]);
 
+  // variable with the final list of cars
   const sortedVehicles = useMemo(() => {
     let sortedVehiclesList: IVehicle[] = [];
 
@@ -174,6 +174,7 @@ const CarList: FunctionComponent<Props> = (props) => {
     return sortedVehiclesList;
   }, [vehicleList, selectedVendor, selectedTransmissionType, searchText]);
 
+  // if loading return a progress
   if (props.car.loading) {
     return (
       <div style={{ textAlign: "center", marginTop: "20px" }}>
@@ -300,6 +301,7 @@ const CarList: FunctionComponent<Props> = (props) => {
           />
         );
       })}
+      {/* message */}
       {sortedVehicles.length === 0 && (
         <div className={classes.message}>
           <Typography variant="caption">No vehicles found.</Typography>

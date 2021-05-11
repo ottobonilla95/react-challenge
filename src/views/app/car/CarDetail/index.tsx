@@ -53,7 +53,6 @@ const useStyles = makeStyles({
 const CarDetail: FunctionComponent<Props> = (props) => {
   const classes = useStyles();
 
-  console.log(props.car.currentVehicle);
   if (!props.car.currentVehicle) {
     return <Redirect to="/app/car/list" />;
   }
