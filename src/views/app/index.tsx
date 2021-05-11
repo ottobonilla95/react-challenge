@@ -16,7 +16,7 @@ interface Props extends RouteChildrenProps {}
 const App: FunctionComponent<Props> = (props) => (
   <AppLayout>
     <Route path={`${props.match?.path}/`} exact>
-      <Redirect to={`${props.match?.path}/car`} />
+      <Redirect to={`${props.match?.path}/home`} />
     </Route>
     <Route path={`${props.match?.path}/home`} component={HomeView} />
     <Route path={`${props.match?.path}/car`} component={CarViews} />

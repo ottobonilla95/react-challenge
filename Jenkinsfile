@@ -8,7 +8,7 @@ pipeline {
     }
     environment {
         CI = 'true'
-        emailToNotify = 'pinguinoanon95@gmail.com'
+        emailToNotify = 'mr.bonilla51@gmail.com'
     }
     stages {
         stage('Build') {
